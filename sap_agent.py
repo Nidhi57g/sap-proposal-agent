@@ -1,10 +1,15 @@
 # sap_agent.py
-# Minimal GitHub-safe test agent
+# Minimal CI-safe SAP Proposal Agent
 
-print("SAP Proposal Agent starting...")
+from pptx import Presentation
+import sys
 
-def main():
-    print("✅ Agent executed successfully")
+def self_test():
+    prs = Presentation()
+    slide = prs.slides.add_slide(prs.slide_layouts[0])
+    slide.shapes.title.text = "SAP Proposal Agent"
+    prs.save("test_output.pptx")
+    print("✅ SAP Proposal Agent test passed")
 
 if __name__ == "__main__":
-    main()
+    self_test()
